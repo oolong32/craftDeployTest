@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{# site.name #}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <h1>Site Name</h1>
+
+  <nav>
+  {% include 'nav.html' %}
+  </nav>
+
+  <main>
+    {% block main %}
+    <p>If you see this, something’s amiss in the templates, i.e. the main block is not being loaded into the layout-template.</p> 
+    {% endblock %}
+  </main>
+</body>
+</html>

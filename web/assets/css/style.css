@@ -1,0 +1,79 @@
+@import url("../fonts/font.css");
+body {
+  font-family: "Sporting Grotesque_Regular", sans-serif;
+  margin: 0;
+  background-image: linear-gradient(to bottom right, lawngreen, papayawhip);
+  min-height: 100vh;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+small {
+  font-size: 9px;
+}
+
+h1, h2 {
+  font-family: "Le Murmure_Regular";
+}
+
+h1 {
+  text-align: center;
+  font-size: 6em;
+  margin: 0.2em;
+}
+
+h2 {
+  font-size: 4em;
+  margin: 0;
+}
+
+h3, h4, p {
+  margin: 0;
+}
+
+nav {
+  width: 40em;
+  margin: 0 auto;
+  border-bottom: 2px solid black;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin-right: 1em;
+}
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: fuchsia;
+}
+
+a:hover {
+  color: deeppink;
+}
+
+main {
+  width: 40em;
+  margin: 1em auto 1em;
+}
+main section {
+  padding: 0.5em;
+  margin: 1em 0;
+}
+main article {
+  margin: 1em 0 2em;
+}
+main img {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

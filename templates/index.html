@@ -1,0 +1,12 @@
+{% extends '_layout.html' %}
+{% block main %}
+  <h2>Homepage</h2>
+  {% for entry in craft.entries.section('blog').limit(10).all() %}
+  <article>
+    <h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+    <h3>{{ entry.blogIntroduction }}</h3>
+    {{ entry.blogBody }}
+    <p><small>Posted by <a href="#">{{ entry.author }}</a> in {% for category in entry.category.all() %} <a href="{{ category.url }}">{{ category }}</a> {% endfor %}on {{ entry.postDate | date("d.m.Y") }}</small></p>
+  </article>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{# Angebote Index #}
+{% extends '_layout.html' %}
+{% block main %}
+  {% set categories = craft.entries.section('angebote').level(1).all() %}
+  <h2>Meeresbewohner</h2>
+
+  {% for category in categories %}
+  <section class="angebot">
+    <h3>{{ category.title }}</h3>
+    {{ category.pageCopy }}
+    {% if category.children().level(2)|length %}
+      {% set angebote = category.children().level(2) %}
+      {% for angebot in angebote %}
+      <article>
+      <h4 id="{{ angebot.slug }}">{{ angebot.title }}</h4>
+        {{ angebot.pageCopy }}
+        {% if angebot.pageImage|length %}
+          <img src="{{ angebot.pageImage[0].getUrl() }}" alt="">
+        {% endif %}
+      </article>
+      {% endfor %}
+    
+    {% endif %}
+  </section>
+  {% endfor %}
+ 
+
+  
+{% endblock %}

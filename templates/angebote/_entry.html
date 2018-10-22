@@ -1,0 +1,37 @@
+{# Angebote Einzeleintrag #}
+{% extends '_layout.html' %}
+{% block main %}
+  <p>Angebote Einzeleintrag</p>
+
+  {# Prüfen: handelt es sich um eine Angebotskategorie oder um ein einzelnes Angebot? #}
+
+  <section class="angebot">
+
+  {% if entry.level < 2 %}
+    <h3>{{ entry.title }}</h3>
+    {% for children in entry.children %}
+    <article>
+      <h4 id="{{ children.slug }}">{{ children.title }}</h4>
+      {{ children.pageCopy }}
+      {% if children.pageImage|length %}
+        <img src="{{ children.pageImage[0].getUrl() }}" alt="">
+      {% endif %}
+    </article>
+    {% endfor %}
+
+  {% else %}
+
+    <h3>{{ entry.parent.title }}</h3>
+    <article>
+      <h4 id="{{ entry.slug }}">{{ entry.title }}</h4>
+      {{ entry.pageCopy }}
+      {% if entry.pageImage|length %}
+        <img src="{{ entry.pageImage[0].getUrl() }}" alt="">
+      {% endif %}
+    </article>
+    {# wärs möglich, noch die siblings zu zeigen? #}
+
+  {% endif %}
+
+  </section>
+{% endblock %}

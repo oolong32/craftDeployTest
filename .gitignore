@@ -1,0 +1,5 @@
+/.env
+/.idea
+/vendor
+*.swp
+.DS_Store

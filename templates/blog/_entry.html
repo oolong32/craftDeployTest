@@ -1,0 +1,13 @@
+{% extends '_layout.html' %}
+
+{% block main %}
+<h2>{{ entry.title }}</h2>
+<h3>{{ entry.blogIntroduction }}</h3>
+<p>Posted by {{ entry.author }} on {{ entry.postDate | date('d M, Y') }}</p>
+{{ entry.blogBody }}
+<ul>
+{% for category in entry.category %}
+  <li>{{ category }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
