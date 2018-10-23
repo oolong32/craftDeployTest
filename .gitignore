@@ -1,5 +1,5 @@
 /.env
 /.idea
 /vendor
-*.swp
+**/*.swp
 .DS_Store
